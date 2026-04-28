@@ -22,3 +22,9 @@ Prerequisites
 **To maintain our 99.9% uptime requirement, we use:**
 
 * Amazon CloudWatch: For real-time metrics and alarm triggers.
+
+
+
+**Author**: Kadiri George 
+**Version**: 1.0.0  
+**Last Updated**: April 2026
