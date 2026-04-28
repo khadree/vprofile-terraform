@@ -1,4 +1,4 @@
-## **APPlication Deployment**
+## **Application Deployment**
 
 This terraform code deploy an application to AWS ECS, provisiong the Container Registry, Target Group, Application load Balancer,
 Using AWS CodePipeline as the CI/CD; with Github as the Source, CodeBuild as the Build and CodeDeploy to deploy to Elastic Container Service.

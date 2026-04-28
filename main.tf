@@ -150,48 +150,6 @@ resource "aws_iam_role_policy_attachment" "ecs_execution_role_policy" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 }
 
-### Custom policy for task role
-# resource "aws_iam_policy" "ecs_custom_ecr_logs_policy" {
-#   name        = "ecs-custom-ecr-logs-policy"
-#   description = "Custom policy for ECS to pull from specific ECR and write logs"
-
-#   policy = jsonencode({
-#     Version = "2012-10-17"
-#     Statement = [
-#       {
-#         Effect   = "Allow"
-#         Action   = [
-#           "ecr:BatchCheckLayerAvailability",
-#           "ecr:BatchGetImage",
-#           "ecr:GetDownloadUrlForLayer"
-#         ]
-#         Resource = aws_ecr_repository.image_repo.arn
-#       },
-#       {
-#         Effect   = "Allow"
-#         Action   = "ecr:GetAuthorizationToken"
-#         Resource = "*"
-#       },
-#       {
-#         Effect = "Allow"
-#         Action = [
-#           "logs:CreateLogStream",
-#           "logs:PutLogEvents"
-#         ]
-#         Resource = "arn:aws:logs:eu-west-1:114725187682:log-group:/ecs/vprofile-log:*"
-#       }
-#     ]
-#   })
-# }
-
-
-# ## Attachement
-
-# resource "aws_iam_role_policy_attachment" "ecs_custom_execution_role_attachment" {
-#   role       = aws_iam_role.ecs_execution_role.name
-#   policy_arn = aws_iam_policy.ecs_custom_ecr_logs_policy.arn
-# }
-
 
 resource "aws_iam_role" "ecs_task_role" {
   name = "ecsTaskRole"
